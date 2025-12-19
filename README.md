@@ -5,7 +5,9 @@ A simple farming simulator game built with Python and Pygame where you can plant
 ## Requirements
 
 To run this game, you'll need:
-- **Python 3.6 or higher**
+- **Python 3.6 through 3.13** (Python 3.14 is not yet supported by pygame)
+  - **Recommended:** Python 3.12 or 3.13 for best compatibility
+  - **Note:** If you have Python 3.14, you'll need to install Python 3.12 or 3.13 alongside it
 - **Pygame library**
 
 ## Installation Instructions
@@ -24,26 +26,39 @@ Or on some systems:
 python3 --version
 ```
 
-If you see a version number like `Python 3.x.x`, you're good to go! If not, proceed to install Python.
+**What to look for:**
+- ✅ **Good:** `Python 3.6.x` through `Python 3.13.x` - You're ready to go!
+- ⚠️ **Not supported:** `Python 3.14.x` or higher - You'll need to install Python 3.12 or 3.13
+- ❌ **Too old:** `Python 2.x.x` or `Python 3.5.x` or lower - Install a newer version
+
+If you don't have a compatible Python version, proceed to install Python.
 
 ### Step 2: Install Python (if needed)
 
+**If you have Python 3.14:**
+You can keep Python 3.14 and install Python 3.12 or 3.13 alongside it. Both versions can coexist on your system. Just make sure to use the correct version when running the game (e.g., `py -3.12 Farmsim.py` on Windows).
+
 **Windows:**
-1. Download Python from [python.org](https://www.python.org/downloads/)
+1. Download Python 3.12 or 3.13 from [python.org](https://www.python.org/downloads/)
 2. Run the installer
 3. **Important:** Check the box "Add Python to PATH" during installation
 4. Click "Install Now"
 
 **macOS:**
-1. Download Python from [python.org](https://www.python.org/downloads/)
+1. Download Python 3.12 or 3.13 from [python.org](https://www.python.org/downloads/)
 2. Run the installer package
 3. Follow the installation prompts
 
 **Linux:**
-Most Linux distributions come with Python pre-installed. If not:
+Most Linux distributions come with Python pre-installed. If not, or if you need a specific version:
 ```bash
 sudo apt update
-sudo apt install python3 python3-pip
+sudo apt install python3.12 python3.12-pip
+```
+
+Or for Python 3.13:
+```bash
+sudo apt install python3.13 python3.13-pip
 ```
 
 ### Step 3: Check if Pygame is Installed
@@ -114,6 +129,26 @@ Or:
 python3 Farmsim.py
 ```
 
+**If you have multiple Python versions installed:**
+
+Windows:
+```bash
+py -3.12 Farmsim.py
+```
+or
+```bash
+py -3.13 Farmsim.py
+```
+
+macOS/Linux:
+```bash
+python3.12 Farmsim.py
+```
+or
+```bash
+python3.13 Farmsim.py
+```
+
 ## Game Controls
 
 - **WASD** - Move your character (hold to keep moving)
@@ -138,6 +173,11 @@ python3 Farmsim.py
 
 **"No module named pygame"**
 - Make sure you've installed pygame using pip as shown in Step 4
+
+**"No module named 'setuptools._distutils.msvccompiler'" or pygame won't install**
+- This typically means you have **Python 3.14** which pygame doesn't support yet
+- Solution: Install **Python 3.12 or 3.13** from [python.org](https://www.python.org/downloads/)
+- You can have multiple Python versions installed - just use the correct version to run the game
 
 **"Permission denied" error when installing**
 - Try adding `--user` flag: `pip install --user pygame`
